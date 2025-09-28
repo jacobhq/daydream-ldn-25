@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://raaaivp7b1um"]
+[gd_scene load_steps=5 format=3 uid="uid://raaaivp7b1um"]
 
 [ext_resource type="Script" uid="uid://oa6oklbl8m10" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="2_epypp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e48y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(109, 183)
@@ -12,7 +14,11 @@ size = Vector2(109, 183)
 position = Vector2(90, 101)
 script = ExtResource("1_0e48y")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_0e48y")
+
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+visible = false
 scale = Vector2(0.36397058, 0.18509616)
 texture = ExtResource("2_epypp")
 
