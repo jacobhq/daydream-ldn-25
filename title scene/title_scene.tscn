@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://csqxxeutrrkcr"]
+[gd_scene load_steps=7 format=3 uid="uid://csqxxeutrrkcr"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_f8x4u"]
 
@@ -14,6 +14,28 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8x4u"]
+bg_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jos0k"]
+bg_color = Color(0.8346143, 0.8346143, 0.8346143, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8x4u"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -51,24 +73,45 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xvfwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f8x4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Start Game"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xvfwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f8x4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Options"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xvfwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f8x4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Exit"
 
 [node name="Label" type="Label" parent="."]
