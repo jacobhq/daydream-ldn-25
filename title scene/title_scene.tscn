@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://csqxxeutrrkcr"]
+[gd_scene load_steps=12 format=3 uid="uid://csqxxeutrrkcr"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_f8x4u"]
+[ext_resource type="Script" uid="uid://crw07cy4m7uxi" path="res://title scene/title_scene.gd" id="1_jos0k"]
+[ext_resource type="Script" uid="uid://celmj7reomwjq" path="res://title scene/audio_control.gd" id="3_gy2fk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jos0k"]
 texture = ExtResource("1_f8x4u")
@@ -37,6 +39,18 @@ shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8x4u"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jos0k"]
+color = Color(1, 1, 1, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gy2fk"]
+color = Color(1.0492504e-05, 0.53119296, 0.8725807, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sojht"]
+color = Color(1.0492504e-05, 0.53119296, 0.8725807, 1)
+thickness = 4
+
 [node name="Title Screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -44,8 +58,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jos0k")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jos0k")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -69,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -84,7 +99,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -99,7 +114,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -130,3 +145,69 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Title"
 horizontal_alignment = 1
+
+[node name="Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 306.0
+offset_right = 392.0
+offset_bottom = 372.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvfwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f8x4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
+text = "Back"
+
+[node name="AudioControl" type="HSlider" parent="Options"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 129.0
+offset_right = 562.0
+offset_bottom = 217.0
+theme_override_styles/slider = SubResource("StyleBoxLine_jos0k")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_gy2fk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_sojht")
+value = 50.0
+script = ExtResource("3_gy2fk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
