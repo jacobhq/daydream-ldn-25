@@ -183,7 +183,9 @@ offset_bottom = 217.0
 theme_override_styles/slider = SubResource("StyleBoxLine_jos0k")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_gy2fk")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_sojht")
-value = 50.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("3_gy2fk")
 audio_bus_name = "Music"
 
