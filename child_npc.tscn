@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c05rirqsx5ogd"]
+[gd_scene load_steps=8 format=3 uid="uid://c05rirqsx5ogd"]
 
 [ext_resource type="Script" uid="uid://cxeudc24rxjfj" path="res://child_npc.gd" id="1_2e6v7"]
 [ext_resource type="Texture2D" uid="uid://dne2r8bxjsuh5" path="res://Hana Caraka - Base Character [sample]/idle.png" id="1_grt42"]
+[ext_resource type="Script" uid="uid://deph2qawyniu3" path="res://area_2d.gd" id="3_6mbkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
 atlas = ExtResource("1_grt42")
@@ -39,6 +40,7 @@ shape = SubResource("RectangleShape2D_6mbkn")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(185, 112)
+script = ExtResource("3_6mbkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-139, 34)
