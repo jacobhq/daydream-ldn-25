@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://csqxxeutrrkcr"]
+[gd_scene load_steps=12 format=3 uid="uid://csqxxeutrrkcr"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_f8x4u"]
 [ext_resource type="Script" uid="uid://crw07cy4m7uxi" path="res://title scene/title_scene.gd" id="1_jos0k"]
+[ext_resource type="Script" uid="uid://celmj7reomwjq" path="res://title scene/audio_control.gd" id="3_gy2fk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jos0k"]
 texture = ExtResource("1_f8x4u")
@@ -37,6 +38,18 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8x4u"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jos0k"]
+color = Color(1, 1, 1, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gy2fk"]
+color = Color(1.0492504e-05, 0.53119296, 0.8725807, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sojht"]
+color = Color(1.0492504e-05, 0.53119296, 0.8725807, 1)
+thickness = 4
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -177,7 +190,24 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jos0k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_f8x4u")
 text = "Back"
 
+[node name="AudioControl" type="HSlider" parent="Options"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 129.0
+offset_right = 562.0
+offset_bottom = 217.0
+theme_override_styles/slider = SubResource("StyleBoxLine_jos0k")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_gy2fk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_sojht")
+value = 50.0
+script = ExtResource("3_gy2fk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
