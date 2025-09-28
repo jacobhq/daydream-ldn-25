@@ -8,4 +8,4 @@
 	#if body.is_in_group("player")
 	#get_tree().change_scene_to_file()
 	
-extends CharacterBody2D
+extends Node2D

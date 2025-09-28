@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_3kren"]
 [ext_resource type="PackedScene" uid="uid://raaaivp7b1um" path="res://node_2d.tscn" id="2_hxmds"]
-[ext_resource type="PackedScene" uid="uid://c05rirqsx5ogd" path="res://child_npc.tscn" id="3_juphk"]
+[ext_resource type="PackedScene" path="res://child_npc.tscn" id="3_juphk"]
 [ext_resource type="Texture2D" uid="uid://c2ajoocoe8pn1" path="res://icon.svg" id="3_pg86k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pg86k"]
