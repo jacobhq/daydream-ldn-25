@@ -48,3 +48,7 @@ offset_top = -10.0
 offset_right = 80.0
 offset_bottom = 13.0
 text = "37028"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Player"]
+position = Vector2(36, 25)
+rect = Rect2(-10, -10, 35, 69)
