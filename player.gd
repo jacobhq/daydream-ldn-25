@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var start_time: float = 60.0
 
 var time_left: float
+func _ready():
+	time_left = start_time
 @onready var timer_label: Label = $TimerLabel
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO
@@ -24,9 +26,12 @@ func _process(delta: float) -> void:
 		time_left -= delta
 	else:
 		time_left = 0
-		print("Time's up")
+		
 		
 	timer_label.text = str(int(time_left))
+	
+
+		
 	
 		
 		
