@@ -2,9 +2,13 @@ extends CharacterBody2D
 @export var speed: float = 200.0  #pixels per second
 @export var start_time: float = 60.0
 
+const GRAVITY = 200.0
+
 var time_left: float
 @onready var timer_label: Label = $TimerLabel
 func _physics_process(delta: float) -> void:
+	velocity.y += delta * GRAVITY
+	
 	var input_vector = Vector2.ZERO
 	
 	if Input.is_action_pressed("ui_right"):
