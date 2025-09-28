@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://con835dihbuws"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_3kren"]
-[ext_resource type="PackedScene" uid="uid://bpti1ys7aduw3" path="res://node_2d.tscn" id="2_hxmds"]
+[ext_resource type="PackedScene" uid="uid://raaaivp7b1um" path="res://node_2d.tscn" id="2_hxmds"]
 [ext_resource type="Texture2D" uid="uid://c2ajoocoe8pn1" path="res://icon.svg" id="3_pg86k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxmds"]
@@ -2135,6 +2135,7 @@ layer_0/tile_data = PackedInt32Array(786465, 393216, 33, 852001, 393216, 34, 786
 position = Vector2(50, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("3_pg86k")
