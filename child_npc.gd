@@ -1,4 +1,5 @@
-extends Node2D
+#extends Node2D
+extends CharacterBody2D
 
 @onready var area: Area2D = $Area2D
 
@@ -12,3 +13,4 @@ func _on_area_body_entered(body: Node) -> void:
 		print("Player reached NPC!")
 		# Switch to your DecisionScreen scene
 		get_tree().change_scene_to_file("res://DecisionScreen.tscn")
+		
