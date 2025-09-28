@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://raaaivp7b1um"]
+[gd_scene load_steps=7 format=3 uid="uid://raaaivp7b1um"]
 
 [ext_resource type="Script" uid="uid://oa6oklbl8m10" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://d0o7aqbgieyje" path="res://The Male adventurer - Free/Idle/idle.png" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="2_epypp"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("2_0hol4")
+region = Rect2(0, 0, 48, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0e48y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(109, 183)
+size = Vector2(33.15625, 54.0625)
 
 [node name="plore1" type="Node2D"]
 
@@ -15,6 +29,8 @@ position = Vector2(90, 101)
 script = ExtResource("1_0e48y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(40.000008, 53.333344)
+scale = Vector2(2.6666667, 2.666667)
 sprite_frames = SubResource("SpriteFrames_0e48y")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -23,14 +39,14 @@ scale = Vector2(0.36397058, 0.18509616)
 texture = ExtResource("2_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, 0)
+position = Vector2(43, 47)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="TimerLabel" type="Label" parent="Player"]
-offset_left = -23.0
-offset_top = -135.0
-offset_right = 17.0
-offset_bottom = -112.0
+offset_left = 34.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 13.0
 text = "37028"
 
 [node name="NPC" type="Node2D" parent="."]
