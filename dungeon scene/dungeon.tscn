@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://con835dihbuws"]
+[gd_scene load_steps=12 format=3 uid="uid://con835dihbuws"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_3kren"]
 [ext_resource type="PackedScene" uid="uid://raaaivp7b1um" path="res://node_2d.tscn" id="2_hxmds"]
-[ext_resource type="PackedScene" uid="uid://c05rirqsx5ogd" path="res://child_npc.tscn" id="3_juphk"]
+[ext_resource type="PackedScene" path="res://child_npc.tscn" id="3_juphk"]
 [ext_resource type="Texture2D" uid="uid://c2ajoocoe8pn1" path="res://icon.svg" id="3_pg86k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pg86k"]
@@ -2107,6 +2107,8 @@ texture = ExtResource("1_3kren")
 [sub_resource type="TileSet" id="TileSet_juphk"]
 sources/0 = SubResource("TileSetAtlasSource_cnilw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juphk"]
+
 [node name="dungeon" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -2141,6 +2143,7 @@ position = Vector2(-104, 239)
 texture = ExtResource("3_pg86k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_juphk")
 
 [node name="child npc" parent="." instance=ExtResource("3_juphk")]
 position = Vector2(50, 280)
