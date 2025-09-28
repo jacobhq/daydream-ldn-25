@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csqxxeutrrkcr"]
+[gd_scene load_steps=8 format=3 uid="uid://csqxxeutrrkcr"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_f8x4u"]
+[ext_resource type="Script" uid="uid://crw07cy4m7uxi" path="res://title scene/title_scene.gd" id="1_jos0k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jos0k"]
 texture = ExtResource("1_f8x4u")
@@ -44,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jos0k")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -130,3 +132,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Title"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
