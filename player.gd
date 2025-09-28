@@ -2,6 +2,8 @@ extends CharacterBody2D
 @export var speed: float = 200.0  #pixels per second
 @export var start_time: float = 60.0
 
+
+
 const GRAVITY = 200.0
 const WALK_SPEED = 200
 
@@ -13,6 +15,8 @@ var time_left: float
 func _ready():
 	time_left = start_time
 	screen_notifier.connect("screen_exited", Callable(self, "_on_screen_exited"))
+	add_to_group("player")
+
 	
 func _physics_process(delta: float) -> void:	
 	if Input.is_action_pressed("ui_right"):
