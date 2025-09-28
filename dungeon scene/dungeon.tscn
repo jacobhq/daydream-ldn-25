@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://con835dihbuws"]
+[gd_scene load_steps=2 format=3 uid="uid://con835dihbuws"]
+
+[sub_resource type="TileSet" id="TileSet_r2ghj"]
 
 [node name="dungeon" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_r2ghj")
+format = 2
