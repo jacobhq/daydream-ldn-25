@@ -48,9 +48,3 @@ offset_top = -10.0
 offset_right = 80.0
 offset_bottom = 13.0
 text = "37028"
-
-[node name="NPC" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="NPC"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
