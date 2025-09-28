@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://con835dihbuws"]
+[gd_scene load_steps=9 format=3 uid="uid://con835dihbuws"]
 
 [ext_resource type="Texture2D" uid="uid://tfiqyx8g886s" path="res://Tilesetv3.png" id="1_3kren"]
+[ext_resource type="PackedScene" uid="uid://bpti1ys7aduw3" path="res://node_2d.tscn" id="2_hxmds"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxmds"]
 texture = ExtResource("1_3kren")
@@ -2120,3 +2121,6 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_juphk")
 format = 2
 layer_0/tile_data = PackedInt32Array(786465, 393216, 33, 852001, 393216, 34, 786466, 458752, 33, 852002, 458752, 34)
+
+[node name="Node2D" parent="." instance=ExtResource("2_hxmds")]
+position = Vector2(50, 0)
