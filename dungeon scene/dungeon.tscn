@@ -2129,7 +2129,7 @@ layer_0/tile_data = PackedInt32Array(720919, 327680, 23, 786455, 327680, 24, 720
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_juphk")
 format = 2
-layer_0/tile_data = PackedInt32Array(786465, 393216, 33, 852001, 393216, 34, 786466, 458752, 33, 852002, 458752, 34)
+layer_0/tile_data = PackedInt32Array(786465, 393216, 33, 852001, 393216, 34, 786466, 458752, 33, 852002, 458752, 34, 196612, 524288, 35)
 
 [node name="Node2D" parent="." instance=ExtResource("2_hxmds")]
 position = Vector2(50, 0)

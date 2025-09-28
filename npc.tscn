@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bd8gx60uctgta"]
+[gd_scene load_steps=0 format=3 uid="uid://bd8gx60uctgta"]
 
 [node name="NPC" type="Node2D"]
 
