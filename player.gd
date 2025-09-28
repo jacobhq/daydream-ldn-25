@@ -6,9 +6,14 @@ const GRAVITY = 200.0
 const WALK_SPEED = 200
 
 var time_left: float
+
+@onready var timer_label: Label = $TimerLabel
+@onready var screen_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+
 func _ready():
 	time_left = start_time
-@onready var timer_label: Label = $TimerLabel
+	screen_notifier.connect("screen_exited", Callable(self, "_on_screen_exited"))
+	
 func _physics_process(delta: float) -> void:	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = WALK_SPEED
@@ -33,3 +38,6 @@ func _process(delta: float) -> void:
 		time_left = 0
 	
 	timer_label.text = str(int(time_left))
+	
+func _on_screen_exited() -> void:
+	get_tree().change_scene_to_file("res://title scene/title_scene.tscn")
