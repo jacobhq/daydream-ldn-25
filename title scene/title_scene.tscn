@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://csqxxeutrrkcr"]
+[gd_scene load_steps=13 format=3 uid="uid://csqxxeutrrkcr"]
 
-[ext_resource type="Script" path="res://title scene/title_scene.gd" id="1_jos0k"]
-[ext_resource type="Script" path="res://title scene/audio_control.gd" id="3_gy2fk"]
+[ext_resource type="Script" uid="uid://crw07cy4m7uxi" path="res://title scene/title_scene.gd" id="1_jos0k"]
+[ext_resource type="Script" uid="uid://celmj7reomwjq" path="res://title scene/audio_control.gd" id="3_gy2fk"]
 [ext_resource type="Texture2D" uid="uid://bk8vfa4fhad7b" path="res://title screen.jpg" id="3_sojht"]
+[ext_resource type="AudioStream" uid="uid://8w1wm1pkmo1h" path="res://ancient-caves-simon-folwar-main-version-28940-02-08.mp3" id="4_sojht"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jos0k"]
 texture = ExtResource("3_sojht")
@@ -184,9 +185,12 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_gy2fk")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_sojht")
 value = 50.0
 script = ExtResource("3_gy2fk")
+audio_bus_name = "Music"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sojht")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_option_pressed"]
