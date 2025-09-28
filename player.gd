@@ -3,24 +3,24 @@ extends CharacterBody2D
 @export var start_time: float = 60.0
 
 const GRAVITY = 200.0
+const WALK_SPEED = 200
 
 var time_left: float
 @onready var timer_label: Label = $TimerLabel
 func _physics_process(delta: float) -> void:
 	velocity.y += delta * GRAVITY
 	
-	var input_vector = Vector2.ZERO
-	
 	if Input.is_action_pressed("ui_right"):
-		input_vector.x += 1
+		velocity.x = WALK_SPEED
 	if Input.is_action_pressed("ui_left"):
-		input_vector.x -= 1
+		velocity.x = -WALK_SPEED
 	if Input.is_action_pressed("ui_down"):
-		input_vector.y += 1
+		velocity.y = -WALK_SPEED
 	if Input.is_action_pressed("ui_up"):
-		input_vector.y -= 1
+		velocity.y = WALK_SPEED
+	else:
+		velocity.x = 0
 	
-	velocity = input_vector.normalized() * speed
 	move_and_slide()
 	
 func _process(delta: float) -> void:
@@ -31,11 +31,3 @@ func _process(delta: float) -> void:
 		print("Time's up")
 		
 	timer_label.text = str(int(time_left))
-	
-		
-		
-		
-		
-	
-
-		
