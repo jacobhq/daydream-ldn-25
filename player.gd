@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 		time_left -= delta
 	else:
 		time_left = 0
+		get_tree().change_scene_to_file("res://title scene/title_scene.tscn")
 	
 	timer_label.text = str(int(time_left))
 	
