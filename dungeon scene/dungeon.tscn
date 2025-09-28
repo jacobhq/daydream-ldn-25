@@ -2147,6 +2147,7 @@ shape = SubResource("RectangleShape2D_juphk")
 
 [node name="child npc" parent="." instance=ExtResource("3_juphk")]
 position = Vector2(50, 280)
+script = null
 
 [node name="plore1" parent="." instance=ExtResource("2_hxmds")]
 position = Vector2(130, 189)
