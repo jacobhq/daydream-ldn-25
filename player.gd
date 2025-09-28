@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	velocity = input_vector.normalized() * speed
 	move_and_slide()
 	
-	# test: print direction to console
-	if input_vector != Vector2.ZERO:
-		print("Moving:", input_vector)
+func _process(delta: float) -> void:
+	print("hello")
+		# countdown timer
+		
