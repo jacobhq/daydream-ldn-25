@@ -9,20 +9,19 @@ var time_left: float
 func _ready():
 	time_left = start_time
 @onready var timer_label: Label = $TimerLabel
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	velocity.y += delta * GRAVITY
+	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = WALK_SPEED
-	elif Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left"):
 		velocity.x = -WALK_SPEED
+	if Input.is_action_pressed("ui_down"):
+		velocity.y = -WALK_SPEED
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = WALK_SPEED
 	else:
 		velocity.x = 0
-	
-	if Input.is_action_pressed("ui_down"):
-		velocity.y = WALK_SPEED
-	elif Input.is_action_pressed("ui_up"):
-		velocity.y = -WALK_SPEED
-	else:
-		velocity.y += delta * GRAVITY
 	
 	move_and_slide()
 	
@@ -31,5 +30,6 @@ func _process(delta: float) -> void:
 		time_left -= delta
 	else:
 		time_left = 0
-	
+		
+		
 	timer_label.text = str(int(time_left))
