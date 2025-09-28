@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://btpsnjwg1gd7r"]
+
+[ext_resource type="Script" uid="uid://cyf73q1i3q8xm" path="res://control.gd" id="1_yoxd7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = 20.0
+offset_right = 1163.0
+offset_bottom = 646.0
+script = ExtResource("1_yoxd7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -19.0
+offset_right = 1167.0
+offset_bottom = 636.0
+color = Color(0.46620208, 0.16680145, 0.13266987, 1)
+
+[node name="Sacrifice the child___ or die!" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.123
+offset_left = 386.0
+offset_top = 164.0
+offset_right = 576.336
+offset_bottom = 341.0
+text = "Sacrifice the child ... or run out of time...."
+
+[node name="Sacrifice" type="Button" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 265.0
+offset_right = 476.0
+offset_bottom = 499.0
+text = "SACRIFICE SACRIFICE
+ SACRIFICE SACRIFICE
+SACRIFICE SACRFICIE
+ SACRIFICESACRIFICE 
+SACRIFICESACRIFICE
+ SACRIFICESACRIFICE
+ SACRIFICESACRIFICE 
+SACRIFICE SACRIFICE"
+
+[node name="Die" type="Button" parent="."]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 256.0
+offset_right = 1071.0
+offset_bottom = 487.0
+text = "Run out of time..?!?!?"
